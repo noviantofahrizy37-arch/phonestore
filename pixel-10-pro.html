@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Pixel 10 Pro - Detail Produk</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; color: #333; }
+        nav { background: #2c3e50; padding: 15px; text-align: center; }
+        nav a { color: white; text-decoration: none; font-weight: bold; margin: 0 10px; }
+        .container { max-width: 900px; margin: 50px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; flex-wrap: wrap; gap: 30px; }
+        .product-image { flex: 1; min-width: 300px; text-align: center; }
+        .product-image img { max-width: 100%; height: auto; border-radius: 8px; }
+        .product-details { flex: 1.5; min-width: 300px; }
+        .product-details h1 { margin-top: 0; color: #2c3e50; }
+        .price { font-size: 1.5rem; color: #e74c3c; font-weight: bold; margin: 15px 0; }
+        .description { line-height: 1.6; color: #666; margin-bottom: 25px; }
+        .btn-group { display: flex; gap: 10px; }
+        .btn { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; text-decoration: none; display: inline-block; }
+        .btn-buy { background-color: #27ae60; color: white; }
+        .btn-cart { background-color: #3498db; color: white; }
+        @media (max-width: 600px) { .container { flex-direction: column; margin: 20px; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="all_products.html"> Kembali ke Katalog</a>
+    </nav>
+    <div class="container">
+        <div class="product-image">
+            <img src="imag/Pixel10Pro.png" alt="Google Pixel 10 Pro" onerror="this.src='https://via.placeholder.com/400x400?text=Google Pixel 10 Pro'">
+        </div>
+        <div class="product-details">
+            <p style="color: #3498db; font-weight: bold; margin-bottom: 5px;">Brand: Google</p>
+            <h1>Google Pixel 10 Pro</h1>
+            <div class="price">Rp 9.999.000</div>
+            <div class="description">
+                <p>Spesifikasi Utama:</p>
+                <ul>
+<li>8GB RAM</li><li>128GB Storage</li><li>Fast Charging</li><li>Premium Camera</li>
+</ul>
+                <p>Produk asli dengan garansi resmi. Nikmati teknologi terbaik dari Google untuk mendukung produktivitas dan hiburan Anda setiap hari.</p>
+            </div>
+            <div class="btn-group">
+    <a href="javascript:void(0)" class="btn btn-cart" onclick="addToCart('Google Pixel 10 Pro', 16999000, 'imag/Pixel10Pro.png')">Tambah ke Keranjang</a>
+    <a href="#" class="btn btn-buy">Beli Sekarang</a>
+</div>
+        </div>
+    </div>
+    <footer style="text-align: center; margin-top: 50px; padding-bottom: 30px; color: #999; font-size: 0.8rem;">
+        &copy; 2024 Gadget Store. Project FigmaWebTry.
+    </footer>
+</body>
+<script>
+function addToCart(name, price, img) {
+    // 1. Ambil data keranjang dari browser (atau buat baru jika masih kosong)
+    let cart = JSON.parse(localStorage.getItem('gadgetCart')) || [];
+
+    // 2. Cek apakah produk ini sudah ada di keranjang
+    let itemIndex = cart.findIndex(item => item.name === name);
+
+    if (itemIndex > -1) {
+        // Jika sudah ada, tambah jumlahnya saja
+        cart[itemIndex].quantity += 1;
+    } else {
+        // Jika belum ada, masukkan data produk baru
+        cart.push({
+            name: name,
+            price: price,
+            img: img,
+            quantity: 1
+        });
+    }
+
+    // 3. Simpan kembali data yang sudah diperbarui ke browser
+    localStorage.setItem('gadgetCart', JSON.stringify(cart));
+
+    // 4. Berikan feedback ke user
+    alert(name + " berhasil ditambahkan ke keranjang!");
+    
+    // Opsional: Langsung arahkan ke halaman keranjang
+    // window.location.href = 'cart.html';
+}
+</script>
+</html>

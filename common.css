@@ -1,0 +1,311 @@
+/* ==========================================
+   RESET & TIPOGRAFI
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden; /* Mencegah scrollbar muncul saat animasi */
+    background-color: #0d0f16;
+}
+
+/* ==========================================
+   BAGIAN BACKGROUND
+   ========================================== */
+.page-background {
+    position: relative;
+    min-height: 100vh;
+    /* Membuat efek gradient gelap dengan cahaya biru di tengah dan terang di bawah */
+    background-image: 
+        radial-gradient(circle at 10% 50%, rgba(55, 75, 200, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 90% 50%, rgba(55, 75, 200, 0.7) 0%, transparent 45%),
+        linear-gradient(180deg, #0a0b10 0%, #171b2d 40%, #dee0e8 85%, #f0f2f5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 5%;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    gap: 40px;
+    z-index: 2;
+}
+
+/* ==========================================
+   BAGIAN KIRI (TEKS & INFO)
+   ========================================== */
+.left-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.main-heading {
+    font-family: 'Jura', sans-serif; /* Font berkesan futuristik/teknologi */
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.sub-heading {
+    color: #a8acc4;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+/* Tombol Kontak & Sosial (Menyesuaikan dengan gradient terang di bawah) */
+.contact-chips {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.chip, .chip-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #1a1a24;
+    color: #1a1a24;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.chip {
+    padding: 10px 24px;
+    gap: 10px;
+}
+
+.social-chips {
+    display: flex;
+    gap: 15px;
+}
+
+.chip-icon {
+    width: 45px;
+    height: 35px;
+    border-radius: 20px;
+}
+
+.chip:hover, .chip-icon:hover {
+    background-color: #1a1a24;
+    color: #ffffff;
+}
+
+/* ==========================================
+   BAGIAN KANAN (FORM/LOGIN)
+   ========================================== */
+.right-content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Efek Glassmorphism */
+.glass-form {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    color: #d1d4e0;
+    margin-bottom: 8px;
+}
+
+.glass-input {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 14px;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.textarea {
+    resize: none;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #e5e7eb;
+    color: #111827;
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #ffffff;
+}
+
+/* ==========================================
+   ANIMASI MASUK DARI KANAN (KEYFRAMES)
+   ========================================== */
+.slide-in-animation {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideInRight 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==========================================
+   BAGIAN FOOTER
+   ========================================== */
+.site-footer {
+    background-color: #0b0c10;
+    padding: 60px 5% 20px;
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-brand .logo {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links h4, .footer-contact h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-contact p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.footer-social {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social a {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.footer-social a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (MOBILE)
+   ========================================== */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .page-background {
+        padding-top: 120px;
+    }
+}
+@media (max-width: 500px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}

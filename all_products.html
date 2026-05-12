@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katalog Gadget Terpadu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary-color:#2c3e50;
+    --accent-color:#3498db;
+    --bg-color:#f4f7f6;
+    --card-bg:#ffffff;
+    --text-dark:#333;
+    --text-light:#7f8c8d;
+
+    --black:#000;
+    --white:#fff;
+    --font:'Poppins',sans-serif;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:var(--font);
+    background:var(--bg-color);
+    color:var(--text-dark);
+}
+
+/* HEADER */
+.header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:var(--black);
+    padding:0 5%;
+    height:56px;
+    display:flex;
+    align-items:center;
+    width:100%;
+}
+
+.header-inner{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.logo{
+    color:var(--white);
+    font-size:13px;
+    font-weight:600;
+    white-space:nowrap;
+}
+
+.nav{
+    display:flex;
+    gap:24px;
+    margin-right:auto;
+}
+
+.nav a{
+    color:var(--white);
+    text-decoration:none;
+    font-size:13px;
+    opacity:.85;
+    transition:.2s;
+}
+
+.nav a:hover{
+    opacity:1;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.action-btn,
+.icon-btn{
+    background:none;
+    border:none;
+    color:var(--white);
+    font-family:var(--font);
+    font-size:13px;
+    cursor:pointer;
+    opacity:.9;
+}
+
+.action-btn:hover,
+.icon-btn:hover{
+    opacity:1;
+}
+
+/* HERO */
+.hero{
+    background:var(--primary-color);
+    color:#fff;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    opacity:.9;
+}
+
+/* CONTENT */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.section-title{
+    font-size:28px;
+    margin:40px 0 20px;
+    border-bottom:3px solid var(--accent-color);
+    display:inline-block;
+    padding-bottom:8px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:16px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+    transition:.25s;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+}
+
+.product-card img{
+    width:100%;
+    max-width:180px;
+    height:180px;
+    object-fit:contain;
+}
+
+.product-card h3{
+    font-size:20px;
+    margin:15px 0 10px;
+}
+
+.product-card p{
+    font-size:14px;
+    color:var(--text-light);
+    min-height:60px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    border-radius:30px;
+    background:var(--accent-color);
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.btn:hover{
+    background:#2176b5;
+}
+
+footer{
+    margin-top:50px;
+    background:var(--primary-color);
+    color:#fff;
+    text-align:center;
+    padding:25px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .nav{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <span class="logo">NoPPhone</span>
+
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="#brands">Brands</a>
+            <a href="#products">Products</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="action-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                Search
+            </button>
+
+            <button class="action-btn" onclick="window.location.href='account_page.html'">
+                My Account
+            </button>
+
+            <button class="icon-btn" onclick="window.location.href='cart.html'">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+<h1>Gadget Showcase</h1>
+<p>30 produk HP. Karena manusia suka bingung milih.</p>
+</section>
+
+    <div class="container">
+        
+        <!-- Bagian Samsung -->
+        <h2 id="samsung" class="section-title">Samsung Galaxy Series</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="imag/S25 U.png" alt="S25 Ultra">
+                <h3>Galaxy S25 Ultra</h3>
+                <p>Samsung Galaxy S25 Ultra is a premium smartphone built for users who want the best performance and features. </p>
+                <a href="samsung-s25-ultra.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/S24 U.png" alt="S24 Ultra">
+                <h3>Galaxy S24 Ultra</h3>
+                <p>Samsung Galaxy S24 Ultra is a high-end smartphone made for power users. It has a large premium display with smooth refresh rate and vivid colors.</p>
+                <a href="samsung-s24-ultra.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/S25 Edge.png" alt="S25 Edge">
+                <h3>Galaxy S25 Edge</h3>
+                <p>Samsung Galaxy S25 Edge is a sleek smartphone with a premium curved design. It features a sharp display that looks immersive and elegant. </p>
+                <a href="samsung-s25-edge.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/S24 FE.png" alt="S25 Edge">
+                <h3>Galaxy S24 FE</h3>
+                <p>Samsung Galaxy S24 FE is a balanced smartphone that offers strong features at a friendly price. It comes with a bright display that feels smooth and responsive.</p>
+                <a href="samsung-s24-fe.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/S25 FE.png" alt="S25 Edge">
+                <h3>Galaxy S25 FE</h3>
+                <p>Samsung Galaxy S25 FE is designed for users who want flagship style with practical value. It features a vibrant display that is great for videos and gaming.</p>
+                <a href="samsung-s25-fe.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/A55 5G.png" alt="S25 Edge">
+                <h3>Galaxy A55 5G</h3>
+                <p>Samsung Galaxy A55 5G is a mid-range smartphone with reliable daily performance. It offers a smooth display for browsing, watching, and social media.</p>
+                <a href="samsung-a55-5g.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Z FOLD7.png" alt="S25 Edge">
+                <h3>Galaxy Z FOLD7</h3>
+                <p>Samsung Galaxy Z Fold 7 is an innovative foldable smartphone built for productivity and entertainment. It features a large inner display that works like a tablet when opened.</p>
+                <a href="samsung-z-fold7.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Z FLIP7.png" alt="S25 Edge">
+                <h3>Galaxy Z FLIP7</h3>
+                <p>Samsung Galaxy Z Flip 7 is a stylish foldable smartphone with a compact design. It folds neatly to fit easily in pockets or bags.</p>
+                <a href="samsung-z-flip7.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/S24 Basic.png" alt="S25 Edge">
+                <h3>Galaxy S24 Basic</h3>
+                <p>Samsung Galaxy S24 is a compact flagship smartphone with strong daily performance. It offers a sharp display that is smooth and comfortable to use. </p>
+                <a href="samsung-s24-basic.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/A56.png" alt="S25 Edge">
+                <h3>Galaxy A56 5G</h3>
+                <p>Samsung Galaxy A56 5G is a modern mid-range smartphone focused on value and performance. It features a bright display with smooth scrolling and clear visuals. </p>
+                <a href="samsung-a56-5g.html" class="btn">Detail Produk</a>
+            </div>
+        </div>
+
+        <!-- Bagian Apple -->
+        <h2 id="apple" class="section-title">Apple iPhone</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="imag/16Pro.png" alt="S25 Ultra">
+                <h3>iPhone 16 Pro</h3>
+                <p>iPhone 16 Pro is a premium smartphone designed for users who want high performance and elegant design. It features a sharp display with smooth visuals for gaming and media. </p>
+                <a href="iphone-16-pro-max.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/16Plus.png" alt="S24 Ultra">
+                <h3>iPhone 16 Plus</h3>
+                <p>iPhone 16 Plus is a large-screen smartphone made for users who enjoy more viewing space. It offers a bright display that is great for videos, browsing, and gaming. </p>
+                <a href="iphone-16-plus.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/16.png" alt="S25 Edge">
+                <h3>iPhone 16</h3>
+                <p>iPhone 16 is a balanced smartphone with smooth performance and modern features. It comes with a sharp display that is comfortable for daily use. </p>
+                <a href="iphone-16.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/15ProMax.png" alt="S25 Edge">
+                <h3>iPhone 15 Pro Max</h3>
+                <p>iPhone 15 Pro Max is a flagship smartphone built for users who want maximum performance. It features a large premium display with immersive visuals. </p>
+                <a href="iphone-15-pro-max.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/16E.png" alt="S25 Edge">
+                <h3>iPhone 16E</h3>
+                <p>iPhone 16e is a practical smartphone focused on value and reliable performance. It offers a clear display for browsing, streaming, and messaging. </p>
+                <a href="iphone-16e.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/17Pro.png" alt="S25 Edge">
+                <h3>iPhone 17 Pro</h3>
+                <p>iPhone 17 Pro is a premium smartphone with advanced features and powerful performance. It features a bright display with smooth refresh rate.</p>
+                <a href="iphone-17-pro.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/16ProMax.png" alt="S25 Edge">
+                <h3>iPhone 16 Pro Max</h3>
+                <p>iPhone 16 Pro Max is a top-tier smartphone built for users who want the best from Apple. It offers a large immersive display for entertainment and productivity. </p>
+                <a href="iphone-16-pro-max.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/17Promax.png" alt="S25 Edge">
+                <h3>iPhone 17 Pro Max</h3>
+                <p>iPhone 17 Pro Max is a premium flagship smartphone focused on power and innovation. It features a large high-quality display with smooth visuals</p>
+                <a href="iphone-17-pro-max.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/15Basic.png" alt="S25 Edge">
+                <h3>iPhone 15</h3>
+                <p>iPhone 15 is a reliable smartphone with smooth performance and clean design. It offers a bright display for daily entertainment and communication.</p>
+                <a href="iphone-15.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/17Air.png" alt="S25 Edge">
+                <h3>iPhone 17 Air</h3>
+                <p>iPhone 17 Air is a slim smartphone designed for users who prefer lightweight devices. It features a bright display with elegant visuals. </p>
+                <a href="iphone-17-air.html" class="btn">Detail Produk</a>
+            </div>
+        </div>
+
+        <!-- Bagian Pixel -->
+        <h2 id="pixel" class="section-title">Google Pixel</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="imag/Pixel7Pro.png" alt="S25 Ultra">
+                <h3>Google Pixel 7 Pro</h3>
+                <p>Google Pixel 7 Pro is a premium smartphone known for its clean software and smart features. It has a sharp display with smooth visuals for daily use and entertainment. </p>
+                <a href="pixel-7-pro.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Pixel10Pro.png" alt="S24 Ultra">
+                <h3>Google Pixel 10 Pro</h3>
+                <p>Google Pixel 10 Pro is a flagship smartphone focused on AI features and premium performance. It comes with a bright high-quality display for gaming and streaming. </p>
+                <a href="pixel-10-pro.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Pixel10ProFold.png" alt="S25 Edge">
+                <h3>Google Pixel 10 Pro Fold</h3>
+                <p>Google Pixel 10 Pro Fold is a foldable smartphone built for productivity and entertainment. It opens into a larger screen for multitasking and immersive viewing. </p>
+                <a href="pixel-10-pro-fold.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Pixel9a.png" alt="S25 Edge">
+                <h3>Google Pixel 9a</h3>
+                <p>Google Pixel 9a is a value-focused smartphone with strong everyday features. It offers a bright display that is comfortable for browsing and videos.</p>
+                <a href="pixel-9a.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Pixel9Pro.png" alt="S25 Edge">
+                <h3>Google Pixel 9 Pro</h3>
+                <p>Google Pixel 9 Pro is a premium smartphone designed for users who want top performance and camera quality. It features a sharp display with smooth refresh rate. </p>
+                <a href="pixel-9-pro.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Pixel10ProXL.png" alt="S25 Edge">
+                <h3>Google Pixel 10 Pro XL</h3>
+                <p>Google Pixel 10 Pro XL is a large flagship smartphone made for users who enjoy bigger screens. It offers an immersive display for gaming, streaming, and productivity. </p>
+                <a href="pixel-10-pro-xl.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Pixel9ProFold.png" alt="S25 Edge">
+                <h3>Google Pixel 9 Pro Fold</h3>
+                <p>Google Pixel 9 Pro Fold is a premium foldable smartphone with versatile functionality. It unfolds into a spacious screen for multitasking and entertainment. </p>
+                <a href="pixel-9-pro-fold.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Pixel8a.png" alt="S25 Edge">
+                <h3>Google Pixel 8a</h3>
+                <p>Google Pixel 8a is a practical smartphone with excellent everyday usability. It features a clear display that feels smooth and responsive. </p>
+                <a href="pixel-8a.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Pixel8Pro.png" alt="S25 Edge">
+                <h3>Google Pixel 8 Pro</h3>
+                <p>Google Pixel 8 Pro is a high-end smartphone with advanced camera and software features. It comes with a premium display that looks bright and fluid. </p>
+                <a href="pixel-8-pro.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="imag/Pixel7a.png" alt="S25 Edge">
+                <h3>Google Pixel 7a</h3>
+                <p>Google Pixel 7a is a compact smartphone that offers great value and reliable performance. It has a bright display for daily entertainment and browsing. </p>
+                <a href="pixel-7a.html" class="btn">Detail Produk</a>
+            </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Project FigmaWebTry. Dibuat untuk Katalog Gadget.</p>
+    </footer>
+
+</body>
+</html>
