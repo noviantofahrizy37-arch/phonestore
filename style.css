@@ -1218,142 +1218,135 @@ body {
 
 /* ================= MOBILE RESPONSIVE (Max-width: 768px) ================= */
 @media screen and (max-width: 768px) {
-  .product-section {
-    /* Angka 0.5 berarti ukurannya menjadi 50% dari aslinya. 
-       Silakan ubah angka ini (misal 0.6 atau 0.45) sampai pas di layar */
-    transform: scale(0.5);
-    
-    /* Memastikan saat ukurannya mengecil, posisinya tetap berpusat di tengah atas */
-    transform-origin: top center; 
-}
-    
-    /* --- Header & Nav --- */
+    /* 1. Reset Global untuk Mobile */
+    body {
+        overflow-x: hidden; /* Mencegah scroll ke samping pada seluruh halaman */
+    }
+
+    /* 2. Menghapus transform: scale yang merusak layout */
+    .product-section, .products {
+        transform: none !important; 
+        padding: 40px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 3. Perbaikan Header & Nav */
     .header-inner {
         justify-content: space-between;
         gap: 10px;
     }
     .nav {
-        display: none; /* Menyembunyikan menu teks di HP, bisa diganti dengan menu hamburger nanti */
+        display: none; /* Sembunyikan menu teks */
     }
     .action-btn {
-        font-size: 0; /* Menghilangkan teks "Search" & "My Account", hanya ikon/tombol kecil */
-    }
-    .action-btn svg {
-        margin: 0;
+        font-size: 0; /* Sembunyikan teks Search/Account, sisakan icon */
+        padding: 5px;
     }
 
-    /* --- Brands Section --- */
-    .brands-container {
-        flex-direction: column; /* Kartu brand menumpuk ke bawah */
-        align-items: center;
-        gap: 20px;
+    /* 4. MENGECILKAN TULISAN LATEST RELEASE (GAMBAR) */
+    .section-label img {
+        width: 130px; /* Mengecilkan logo Latest Release */
+        height: auto;
+        display: block;
     }
-    .brand-card {
-        width: 100%;
-        max-width: 320px;
-    }
-    .brands-header h1 {
-        font-size: 32px;
+    .flagship-header h2 {
+        font-size: 18px; /* Teks deskripsi di bawah Latest Release */
+        margin-top: 5px;
     }
 
-    /* --- Flagship Section --- */
-    .flagship-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    .flagship-container {
-        gap: 20px;
-        padding-bottom: 20px;
-    }
-    .flagship-card {
-        min-width: 260px; /* Ukuran kartu sedikit lebih kecil di HP */
-    }
-
-    /* --- Featured Header (Blue Text) --- */
-    .featured-header h1 {
-        font-size: 32px;
-    }
-    .featured-container {
-        padding: 0 5%;
-    }
-
-    /* --- Product Grid --- */
-.product-grid {
-        grid-template-columns: 1fr; /* Tetap 1 kolom untuk HP agar jelas */
-        gap: 30px; /* Jarak antar kartu diperkecil */
+    /* 5. Product Grid & Card (Agar pas 1 layar, tidak melebihi batasan) */
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 Kolom agar fokus */
+        gap: 25px;
         padding: 0;
         width: 100%;
     }
 
     .product-card {
-        width: 100%; /* Kartu mengikuti lebar layar */
-        max-width: 100%; /* Pastikan tidak meluap */
-        padding: 15px;
+        width: 100%; 
+        max-width: 100%; /* Memastikan tidak bocor ke samping */
+        padding: 20px;
+        margin: 0 auto;
         box-sizing: border-box;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Bayangan halus */
     }
 
     .product-card img {
-        width: 80% !important; /* Gambar produk sedikit mengecil */
+        width: 70% !important; /* Gambar HP di dalam card mengecil proporsional */
         height: auto;
+        margin: 0 auto;
     }
 
-    /* --- Contact Section --- */
+    /* 6. Brands Section */
+    .brands-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .brand-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* 7. Flagship Section (Scroll Horizontal di HP) */
+    .flagship-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .flagship-card {
+        min-width: 240px; /* Ukuran kartu flagship sedikit lebih kecil */
+    }
+
+    /* 8. Contact Section */
     .contact-section {
-        flex-direction: column; /* Form pindah ke bawah teks */
-        padding: 60px 5%;
-        gap: 40px;
+        flex-direction: column;
+        padding: 40px 20px;
     }
     .contact-container {
         flex-direction: column;
-        gap: 40px;
+        gap: 30px;
     }
     .contact-left h2 {
-        font-size: 36px;
+        font-size: 30px;
     }
     .contact-form-box {
         width: 100%;
+        padding: 25px;
     }
 
-    /* --- Footer --- */
+    /* 9. Footer */
     .footer-container {
         flex-direction: column;
         text-align: center;
+        gap: 30px;
     }
     .footer-left p {
-        margin: 0 auto 25px;
+        margin: 0 auto 20px;
     }
     .subscribe {
         margin: 0 auto;
     }
     .footer-links {
-        justify-content: center;
-        gap: 30px;
+        justify-content: space-around;
+        width: 100%;
     }
     .footer-bottom {
         flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-    .social-icons {
-        justify-content: center;
-    }
-
-    /* --- Info Image --- */
-    .infor-container {
-        padding: 0 20px;
-    }
-    .infor-image img {
-        width: 100%;
+        gap: 15px;
     }
 }
 
-/* Tambahan untuk layar sangat kecil (HP Mini) */
+/* Tambahan untuk HP Layar Kecil (Max-width: 480px) */
 @media screen and (max-width: 480px) {
     .featured-header h1 {
-        font-size: 28px;
+        font-size: 26px;
     }
     .logo {
         font-size: 16px;
+    }
+    .section-label img {
+        width: 100px; /* Lebih kecil lagi untuk HP mungil */
     }
 }
