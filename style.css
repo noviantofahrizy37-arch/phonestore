@@ -1218,6 +1218,14 @@ body {
 
 /* ================= MOBILE RESPONSIVE (Max-width: 768px) ================= */
 @media screen and (max-width: 768px) {
+  .product-section {
+    /* Angka 0.5 berarti ukurannya menjadi 50% dari aslinya. 
+       Silakan ubah angka ini (misal 0.6 atau 0.45) sampai pas di layar */
+    transform: scale(0.5);
+    
+    /* Memastikan saat ukurannya mengecil, posisinya tetap berpusat di tengah atas */
+    transform-origin: top center; 
+}
     
     /* --- Header & Nav --- */
     .header-inner {
