@@ -1218,28 +1218,68 @@ body {
 
 /* ================= MOBILE RESPONSIVE (Max-width: 768px) ================= */
 @media screen and (max-width: 768px) {
+  .product-section {
+    /* Angka 0.5 berarti ukurannya menjadi 50% dari aslinya. 
+       Silakan ubah angka ini (misal 0.6 atau 0.45) sampai pas di layar */
+    transform: scale(0.5);
     
-    /* Perbaikan: Jangan gunakan transform: scale, tapi atur width & padding */
-    .product-section, .products {
-        padding: 40px 15px; /* Kurangi padding agar tidak sempit */
-        transform: none; /* Hapus scale jika ada */
+    /* Memastikan saat ukurannya mengecil, posisinya tetap berpusat di tengah atas */
+    transform-origin: top center; 
+}
+    
+    /* --- Header & Nav --- */
+    .header-inner {
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .nav {
+        display: none; /* Menyembunyikan menu teks di HP, bisa diganti dengan menu hamburger nanti */
+    }
+    .action-btn {
+        font-size: 0; /* Menghilangkan teks "Search" & "My Account", hanya ikon/tombol kecil */
+    }
+    .action-btn svg {
+        margin: 0;
+    }
+
+    /* --- Brands Section --- */
+    .brands-container {
+        flex-direction: column; /* Kartu brand menumpuk ke bawah */
+        align-items: center;
+        gap: 20px;
+    }
+    .brand-card {
         width: 100%;
-        overflow-x: hidden; /* Mencegah scroll ke samping */
+        max-width: 320px;
+    }
+    .brands-header h1 {
+        font-size: 32px;
     }
 
-    /* --- Tulisan Latest Release (Section Label) Menjadi Kecil --- */
-    .section-label img {
-        width: 120px; /* Mengecilkan gambar 'latest release' */
-        height: auto;
+    /* --- Flagship Section --- */
+    .flagship-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .flagship-container {
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+    .flagship-card {
+        min-width: 260px; /* Ukuran kartu sedikit lebih kecil di HP */
     }
 
-    .flagship-header h2 {
-        font-size: 18px; /* Mengecilkan teks di bawah Latest Release */
-        line-height: 1.4;
+    /* --- Featured Header (Blue Text) --- */
+    .featured-header h1 {
+        font-size: 32px;
+    }
+    .featured-container {
+        padding: 0 5%;
     }
 
-    /* --- Product Grid & Card Agar Cocok di Layar --- */
-    .product-grid {
+    /* --- Product Grid --- */
+.product-grid {
         grid-template-columns: 1fr; /* Tetap 1 kolom untuk HP agar jelas */
         gap: 30px; /* Jarak antar kartu diperkecil */
         padding: 0;
@@ -1258,17 +1298,62 @@ body {
         height: auto;
     }
 
-    /* --- Container Global --- */
-    .container, .flagship-wrapper, .brands-wrapper, .featured-container {
-        width: 100% !important;
-        max-width: 100vw !important;
-        padding: 0 20px !important;
-        overflow-x: hidden;
+    /* --- Contact Section --- */
+    .contact-section {
+        flex-direction: column; /* Form pindah ke bawah teks */
+        padding: 60px 5%;
+        gap: 40px;
+    }
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .contact-left h2 {
+        font-size: 36px;
+    }
+    .contact-form-box {
+        width: 100%;
     }
 
-    /* --- Tombol View All --- */
-    .view-all {
-        padding: 8px 16px;
-        font-size: 14px;
+    /* --- Footer --- */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-left p {
+        margin: 0 auto 25px;
+    }
+    .subscribe {
+        margin: 0 auto;
+    }
+    .footer-links {
+        justify-content: center;
+        gap: 30px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+
+    /* --- Info Image --- */
+    .infor-container {
+        padding: 0 20px;
+    }
+    .infor-image img {
+        width: 100%;
+    }
+}
+
+/* Tambahan untuk layar sangat kecil (HP Mini) */
+@media screen and (max-width: 480px) {
+    .featured-header h1 {
+        font-size: 28px;
+    }
+    .logo {
+        font-size: 16px;
     }
 }
